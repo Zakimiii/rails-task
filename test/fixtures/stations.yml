@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  train: MyText
+  station_name: MyText
+  distance: 1
+  property: one
+
+two:
+  train: MyText
+  station_name: MyText
+  distance: 1
+  property: two

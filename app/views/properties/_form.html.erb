@@ -1,0 +1,39 @@
+<%= form_for(@property) do |form| %>
+  <% if @property.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @property.errors.count %>件のエラーがあります。</h2>
+      <ul>
+
+      <% @property.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="property_name">
+    <%= form.label :物件名 %>
+    <%= form.text_field :name %>
+  </div>
+  <div class="property_name">
+    <%= form.label :賃料 %>
+    <%= form.text_field :price %>
+  </div>
+  <div class="property_name">
+    <%= form.label :住所 %>
+    <%= form.text_field :address %>
+  </div>
+  <div class="property_name">
+    <%= form.label :築年数 %>
+    <%= form.text_field :year_built %>
+  </div>
+  <div class="property_name">
+    <%= form.label :備考 %>
+    <%= form.text_field :note %>
+  </div>
+
+
+  <%= form.submit %>
+<% end %>
+
+<%= link_to "戻る", properties_path %>

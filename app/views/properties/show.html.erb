@@ -1,0 +1,9 @@
+<h1>閲覧</h1>
+<p>物件名: <%= @property.name %></p>
+<p>賃料: <%= @property.price %></p>
+<p>住所: <%= @property.address %></p>
+<p>築年数: <%= @property.year_built %></p>
+<p>備考: <%= @property.note %></p>
+
+ <td><%= link_to "編集", edit_property_path(property.id) %></td>
+ <td><%= link_to '戻る', property_path %></td>

@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'pry-rails'
+gem 'better_errors'
+gem 'binding_of_caller'
+gem 'rename'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'

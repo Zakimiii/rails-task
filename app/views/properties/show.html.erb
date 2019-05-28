@@ -1,15 +1,21 @@
 <h1>閲覧</h1>
 <p>物件名: <%= @property.name %></p>
-<p>賃料: <%= @property.price %></p>
+<p>賃料: <%= @property.price %>円</p>
 <p>住所: <%= @property.address %></p>
-<p>築年数: <%= @property.year_built %></p>
+<p>築年数: <%= @property.year_built %>年</p>
 <p>備考: <%= @property.note %></p>
+<div>
+<% a = 1 %>
 
+</div>
 <% @property.stations.each do |property| %>
-  <p>路線名: <%= property.line_name %></p>
+  <h2>最寄り駅<%= a %></h2>
+  <p>路線名: <%= property.train %></p>
   <p>駅名: <%= property.station_name %></p>
-  <p>徒歩分数: <%= property.walk_minute %>分</p>
+  <p>徒歩分数: <%= property.distance %>分</p>
+  <% a += 1%>
 <% end %>
 
  <td><%= link_to "編集", edit_property_path(@property) %></td>
  <td><%= link_to '戻る', properties_path %></td>
+ 

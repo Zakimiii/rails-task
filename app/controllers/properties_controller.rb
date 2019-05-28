@@ -7,13 +7,15 @@ class PropertiesController < ApplicationController
 
   def new
     @property = Property.new
-    #2.times { @property.sations.build }
+    #@property = Property.trains.build
+    2.times { @property.stations.build }
   end
 
   def create
     @property = Property.new(property_params)
-    
-    if porperty.save
+   
+
+    if @property.save
       redirect_to new_property_path(@property)
     else
       render 'new'

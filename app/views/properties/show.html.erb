@@ -5,5 +5,11 @@
 <p>築年数: <%= @property.year_built %></p>
 <p>備考: <%= @property.note %></p>
 
- <td><%= link_to "編集", edit_property_path(property.id) %></td>
- <td><%= link_to '戻る', property_path %></td>
+<% @property.stations.each do |property| %>
+  <p>路線名: <%= property.line_name %></p>
+  <p>駅名: <%= property.station_name %></p>
+  <p>徒歩分数: <%= property.walk_minute %>分</p>
+<% end %>
+
+ <td><%= link_to "編集", edit_property_path(@property) %></td>
+ <td><%= link_to '戻る', properties_path %></td>

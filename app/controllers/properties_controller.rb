@@ -5,17 +5,19 @@ class PropertiesController < ApplicationController
     @properties = Property.all
   end
 
-  def new 
-    @property = Property.new(property_params)
-  end 
+  def new
+    @property = Property.new
+    #2.times { @property.sations.build }
+  end
 
   def create
-   @property = Property.new(property_params)
-   if @porperty.save
-    redirect_to new_property_path
-   else 
-    render 'new'
-   end
+    @property = Property.new(property_params)
+    
+    if porperty.save
+      redirect_to new_property_path(@property)
+    else
+      render 'new'
+    end
   end
 
   def edit
@@ -39,10 +41,11 @@ class PropertiesController < ApplicationController
 
   private
     def property_params
-      unless @params.nil?
-      params.require(:property).permit(:name, :price, :address, :year_built, :note)
-      end
+
+      params.require(:property).permit(:name, :price, :address, :year_built, :note,
+      stations_attributes: [:train, :station_name, :distance, :property_id])
     end
+
     def set_property
       @property = Property.find(params[:id])
     end

@@ -33,7 +33,15 @@
   </div>
 
 
+  <%= form.fields_for :stations do |stations_form| %>
+  <div class="property_name">
+    <%= stations_form.label :路線名 %><br>
+    <%= stations_form.text_field :train %><br>
+  </div>
+  <% end %>
+  
   <%= form.submit %>
 <% end %>
+
 
 <%= link_to "戻る", properties_path %>
